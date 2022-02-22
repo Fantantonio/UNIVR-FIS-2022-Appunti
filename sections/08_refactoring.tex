@@ -1,0 +1,63 @@
+\section{Refactoring}
+\label{sec:08_refactoring}
+Il refactoring è un cambiamento alle strutture interne di un programma per renderle facili da comprendere, più economiche da mantenere e di qualità maggiore ed è eseguito a beneficio degli sviluppatori senza che l'utente finale se ne accorga.\\
+Viene attuato per contrastare la naturale degradazione del software durante il suo ciclo di vita e si può considerare come una sorta di manutenzione preventiva per evitare che a lungo andare ci siano dei deterioramenti e delle complicazioni (es: mancanza di supporto per alcuni web browser).\\
+Principalmente mira a modificare la struttura del codice per ridurne la complessità così da renderlo più facile da comprendere.
+Quando si affronta l'attività di refactoring del codice si modifica la struttura del codice senza agire sulle funzionalità.
+Questa fase prevede che l'attività di aggiunta di funzionalità venga sospesa.\\
+Un altro motivo rilevante per eseguire il refactoring oltre che per aumentare/ripristinare la qualità del codice è il facilitare la scrittura dei casi di test oltre ad agevolare i futuri cambiamenti.\\
+Un concetto vicino a quello del refactoring è quello del \textbf{reengineering}.
+Quest'ultima è un'attività svolta su software di dimensioni elevate e con una vita molto lunga.
+Il reengineering consiste nel riprogettare il sistema per una nuova architettura.
+Si riscrivono quindi diverse parti del software.\\
+Il refactoring, invece, è un'attività condotta in parallelo durante tutto lo sviluppo del software, al contrario del reengineering che, invece, è un'attività puntuale.\\
+Esistono delle linee guida per aiutare a capire quando è il caso di eseguire il refactoring.
+\begin{itemize}[noitemsep]
+    \item Prima di aggiungere una nuova funzionalità perché è più facile rispetto a farlo dopo
+    \item Quando si corregge un bug o ci si trova in presenza di code-smell
+    \item In generale va eseguito il più spesso possibile
+\end{itemize}
+
+\subsection{Code-smell}
+Uno dei modi per identificare la necessità di eseguire il refactoring è quella basata sul code smell.
+La definizione comprende varie casistiche tra cui:
+\begin{itemize}[noitemsep]
+    \item Codice duplicato che limita la correzione degli errori in quanto va fatta per ogni parte duplicata
+    \item Metodi composti da molte righe di codice ai quali tipicamente corrispondono troppe responsabilità (un metodo non dovrebbe essere più lungo di una schermata e non dovrebbe essere pieno di commenti)
+    \item Presenza di costrutti switch-case da sostituire con il polimorfismo nei linguaggi object-oriented
+    \item Data-clumping cioè un gruppo di dati che vengono acceduti sempre insieme e che quindi dovrebbero essere messi in una classe con dei metodi dedicati all'accesso
+    \item Peculative generality cioè quando lo sviluppatore aggiunge una funzionalità molto generica per eventuali sviluppi futuri con il risultato di avere codice non utilizzato nel software
+    \item Dead-code
+    \item Long parameter list
+    \item Blocco try-catch con vuota la parte del catch
+\end{itemize}
+Particolare attenzione va data al codice clonato cioè codice riutilizzato attraverso il copia-incolla.\\
+Di solito lo si attua anche per la creazione di funzionalità simili apportando quindi leggere modifiche al codice copiato.\\
+Questo sistema è perché prono alla propagazione di bug molto difficili da correggere (ci si deve ricordare tutti i punti in cui si è fatto il copia-incolla).
+Fortunatamente esistono dei software che aiutano a trovare le parti clonate.\\
+
+\subsection{Processo e tipologie di refactoring}
+Il processo di refactoring parte quando i casi di test non contengono nessuno errore.
+Successivamente si identificano i code smell, si decide quale tecnica di refactoring adottare ed infine si eseguono nuovamente i test per confermare che la modifica non abbia generato errori.\\
+Avere pochi test o non averne rende questa operazione difficile perché insicura.
+I casi di test infatti proteggono anche da errori che si possono inserire con l'attività di refactoring.\\
+È consigliabile svolgere l'attivita di refactoring per piccoli passi; piccoli cambiamenti per volta e verificando ad ogni passo le modifiche eseguendo i test.\\
+Il refactoring può essere fatto manualmente oppure utilizzando degli strumenti automatici che ne velocizzano il processo.
+Gli \acrfull{IDE} più comuni implementano un catalogo di refactoring per automatizzare questa operazione ed i refactoring più semplici è bene farli con tali strumenti automatici (es: rinominare file, classi, metodi e variabili).
+Tuttavia il refactoring automatico può causare degli errori, ed i casi di test aiutano a tutelarsi anche da queste problematiche.
+I tipi di refactoring più comuni sono:
+\begin{itemize}[noitemsep]
+    \item \textbf{Extract interface}: una classe A fa riferimento ad una struttura dati (es: ArrayList), però potrei voler introdurre un'interfaccia e così disaccoppiare l'utilizzo che la classe A fa della struttura dati, dall'implementazione. Introducendo un'interfaccia che mette a disposizione dei metodi per gestire la struttura dati ottengo il vantaggio di poter in futuro cambiare la struttura dati di riferimento senza dover modificare la classe A
+    \item \textbf{Pull-up}: data una serie di classi con una classe che estende una super classe che a sua volta estende un'altra classe, pull-up è la tecnica che permette di spostare dei componenti da una classe a quella superiore per astrarli maggiormente
+    \item \textbf{Extract method}: se alcune parti di uno o più metodi sono uguali si può prendere la parte di codice duplicata e creare un metodo a sé stante, così da non avere codice duplicato
+    \item \textbf{Move method}: spostare il metodo da una classe all'altra perché sfrutta maggiormente i metodi della seconda
+    \item \textbf{Replace temp with query}: invece di utilizzare variabili temporanee è preferibile utilizzare metodi che ne calcolano e ritornano il valore così da poterli utilizzare più volte in vari metodi.
+    \item \textbf{Replace parameter with method}: invece di calcolare un risultato su una variabile temporanea e poi passare tale valore come input di un metodo, si può passare ottenere quel valore all'interno del metodo invece di riceverlo come parametro
+    \item \textbf{Extract class}: se una classe ha troppi metodi o troppi dati vuol dire che ha troppe responsabilità. Tipicamente queste classi hanno delle responsabilità che sono poco coese e connesse tra di loro, per questo sarebbe bene spezzarle per avere delle responsabilità ben definite di modo che siano riutilizzabili più facilmente mantenibili
+\end{itemize}
+Altri tipi di refactoring più complessi che solitamente non possono essere fatti da uno strumento automatico a meno che non vengano eseguiti come sequenze di refactoring semplici sono:
+\begin{itemize}[noitemsep]
+    \item \textbf{Replace inheritance with delegation}: si consideri una classe Stack e una classe Vector. La prima classe implementa le funzioni push e pop. Queste funzionalità possono essere implementate come un vettore. Un modo per farlo è quello di far estendere la classe vector dalla classe stack. Se stack estende vector però espone tutte le funzionalità che sono disponibili nel vector e vector contiene anche funzionalità che non hanno senso per stack. Per questo è meglio sostituire l'ereditarietà con la delega. La classe stack non estende la classe vector, ma utilizza il vector come una struttura dati. In questo modo le funzionalità di vector che si vuole esporre anche su stack devono essere fatte attraverso delega
+    \item \textbf{Replace conditional with polymorphism}: si consideri una classe Client che fornisce una funzionalità per calcolare l'area di varie figure implementata con uno switch-case. Tipicamente il refactoring prevede di utilizzare una classe astratta Shape che mette a disposizione un metodo per calcolare l'area, ma senza implementarlo. Il metodo concreto viene poi implementato nelle varie classi che estendono la classe shape.
+    \item \textbf{Separate domain from presentation}: quando si inizia ad implementare l'interfaccia grafica che contiene anche la logica di business, senza aver condotto un passo di design precedentemente, l'interfaccia grafica finisce per essere modificata sia da chi si interessa dell'aspetto grafico, sia da chi si occupa della logica di business. Quindi è importante che i vari domini dell'applicazione siano separati. Per passare da un design monolitico ad uno modulare vanno fatti una serie di design passo-passo partendo da un'extract-class, per poi passare ad un refactoring move-field e move-method ed infine un'extract-method così da distribuire le funzionalità nelle varie classi
+\end{itemize}

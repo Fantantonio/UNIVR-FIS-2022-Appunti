@@ -1,0 +1,13 @@
+\section{UML}
+\label{sec:05_uml}
+Così come i requisiti anche il design deve essere documentato.
+Lo standard \acrfull{UML} è nato appunto con questo obiettivo.\\
+Negli anni 80 è nata l'esigenza di avere un linguaggio per la modellazione ma il tentativo di creare un linguaggio condiviso da tutti è stata fallimentare.\\
+L'UML può essere utilizzato in vari contesti, ad esempio per abbozzare soluzioni, ma anche per fornire il dettaglio implementativo di un sistema.\\
+Ci sono varie tipologie di diagrammi UML, non tutti vengono utilizzati correntemente, ma è importante conoscerli.
+I diagrammi si possono dividere in tre categorie:
+\begin{itemize}[noitemsep]
+    \item \textbf{Modelli strutturali}: descrivono l'organizzazione e le relazioni tra le varie parti del sistema. Ci sono delle strutture più statiche e dinamiche che descrivono lo stato a run-time. Il class diagram è sicuramente quello più utilizzato e descrive le varie entità del sistema, con le relative relazioni. Ogni classe è rappresentata da un rettangolo. All'interno ci sono il nome della classe, i vari attributi e metodi. Ogni attributo o metodo ha una visibilità (+ pubblica, - privata, \# package, $\sim$ protected). Le classi rappresentano una vista statica del sistema, mentre gli oggetti sono le istanze di una classe e sono dinamici. Le classi possono anche essere in relazione tra di loro (associazione, generalizzazione, aggregazione, composizione). Il class diagram è utilizzato quando si vuole rappresentare la natura statica del sistema e le relazioni tra le varie componenti. Si possono anche attribuire le responsabilità alle varie classi; se si nota che una classe ne ha troppe è da valutare l'idea di spezzarla in più classi. Allo stesso modo, se una classe non ha responsabilità, è da valutare l'idea di rimuoverla
+    \item \textbf{Modelli di interazione}: descrivono le interazioni tra le varie parti del sistema
+    \item \textbf{Modelli di comportamento}: descrivono come il sistema deve agire
+\end{itemize}

@@ -1,0 +1,152 @@
+\section{Software Process}
+\label{sec:02_software_process}
+L'ingegneria del software vuole portare tutti i vantaggi che ci sono negli altri ambiti ingegneristici anche nello sviluppo software.
+Questi principi sono stati creati intorno agli anni 70-80 in cui chi scriveva software avrebbe dovuto creare un programma senza delle linee guida condivise.
+Anche nello sviluppo software si prende un prodotto grezzo e lo si lavora per ottenere un prodotto finito da consegnare.\\
+E perché è particolare dotarsi di un processo software?\\
+È utile per poter mettere ordine e pianificare in anticipo le varie fasi dello sviluppo così da avere un'idea chiara di degli obiettivi raggiunti e di quelli da raggiungere.\\
+L'obiettivo del processo software è quello di migliorare la produttività dei dipendenti (evitando sprechi di tempo) e soprattutto controllare la qualità del prodotto (sapere in ogni momento se quello che ho davanti è un artefatto finale o parziale).\\
+Solitamente più il processo software è di qualità, più sarà di qualità il prodotto finale.
+Per processo software si intende una serie di attività condotte e finalizzate allo sviluppo del prodotto finale.\\
+Ci sono differenti processi, ma tutti hanno in comune alcune attività.
+\begin{itemize}[noitemsep]
+    \item \textbf{Specifica}: definire come dovrebbe funzionare il sistema
+    \item \textbf{Progettazione e implementazione}: definire l'organizzazione e implementare il sistema
+    \item \textbf{Validazione}: controllare che rispetti i requisiti del cliente
+    \item \textbf{Evoluzione}: cambiare il sistema in base ai cambiamenti del cliente
+\end{itemize}
+Il processo software è diviso in attività condotte per portare avanti lo sviluppo del software (es: creare il design dell'interfaccia utente, specificare il modello dei dati ecc...).
+All'interno del processo ci sono anche gli output del processo stesso (tipicamente sono gli output di un'attività che vengono prodotti anche come input per l'attività successiva), i ruoli per ogni persona che lavora al processo software, le pre e post condizioni (le prime devono essere vere prima dell'inizio e le seconde dopo la fine).\\
+La prima grande distinzione che facciamo tra i processi software:
+\begin{itemize}[noitemsep]
+    \item \textbf{Processi plan-driven}: hanno una struttura fissa nel tempo e sono rigidi. Tutte le attività sono pianificate in anticipo prima di iniziare a sviluppare
+    \item \textbf{Processi AGILE}: hanno una struttura flessibile e sono adatti al cambiamento dei requisiti in corso d'opera. La pianificazione è fatta a grandi linee e viene precisata nel dettaglio man mano che il prodotto sta venendo costruito. I processi AGILE sono nati perché spesso i requisiti da implementare non sono molto chiari all'inizio ma diventano man mano più chiari in corso d'opera
+    \item \textbf{Processi ibridi}: molti processi pratici prendono spunto da entrambe i modelli a seconda delle esigenze
+\end{itemize}
+Il sistema \textbf{Code and Fix}, che non è definibile modello, è un processo abbastanza semplice.\\
+Per prima cosa è necessario capire le necessità che devono essere implementate.
+Dopodiché si inizia l'implementazione di ciò che è stato richiesto.
+Ci sono delle condizioni da superare, dei testi.
+Se questi non passassero dovremmo fare delle azioni di fix.
+Quando i test passano, allora si può consegnare il programma finale.
+Il programma viene scritto per interazioni successive ed è consigliabile solo per progetti con meno di 2000 righe di codice e per team sotto i 5 dipendenti.
+Di fatto questo \underline{non è un processo software}.
+Alcuni modelli di sviluppo software invece sono quelli visti nelle sottosezioni successive.
+
+\subsection{Waterfall model}
+Il modello \textbf{Waterfall} è uno dei primi processi proposti in risposta allo sviluppo del software artigianale e deriva dal processo di lavorazione manufatturiero.
+Negli anni 70 è stato il processo software più utilizzato poiché utilizzato per mettere ordine e capire quali fossero le attività da condurre per produrre software.
+Il suo obiettivo è quello di trasformare una produzione artigianale di software in una produzione industriale.\\
+La caratteristica di questo processo è che il è scomposto in fasi e gli output di una fase sono gli input della fase successiva.
+Quindi la fase successiva può partire solo se quella precedente è stata completata.\\
+La \underline{prima fase} è quella della definizione dei requisiti.
+In questa fase si parla con i clienti o con gli stakeholders per capire quali siano le caratteristiche da implementare.
+Questa fase è importantissima perché gli errori commessi durante questa fase si protraggono per tutto lo sviluppo poiché sono diretta conseguenza di un'errata interpretazione dei requisiti.
+Tipicamente gli utenti non hanno la comprensione completa dei loro problemi perché spesso non li conoscono tutti.
+Una sola intervista, di solito, non è sufficiente per avere una visione completa.\\
+La \underline{seconda fase} è quella in cui si progetta il sistema software, cioè si cerca di definire le linee guida ad alto livello e l'architettura che può essere adottata.
+Questa parte può iniziare solo quando i requisiti sono pronti, vengono scritti e sono immutabili.\\
+Attraverso i requisiti sono attribuite le varie responsabilità ai progetti software.\\
+La \underline{terza fase} è quella dell'implementazione.
+Una volta definito il progetto si comincia a implementare il progetto.
+Vengono scritti anche dei test (unit test) per verificare se i singoli componenti sono corretti o meno.\\
+Quando l'implementazione di tutti i componenti è completa e testata, si può passare alla fase di integrazione in cui tutti i componenti vengono uniti attraverso interazioni.
+Da questo momento è altresì possibile testare il  sistema nella sua interezza e verificare se tutti i componenti comunicano in maniera corretta tra di loro.
+Una volta che il sistema è stato testato nella sua interezza è possibile consegnarlo al committente.
+Tuttavia il lavoro non è concluso ma si passa alla \underline{fase di manutenzione e aggiornamento del software}.\\
+L'attività di manutenzione può essere correttiva, di miglioramento (per aumentare velocità o prestazioni) e per aggiunte (da fare quando eventualmente sorgono nuovi requisiti).\\
+La peculiarità di questo modello è che le fasi sono fisicamente separate nel tempo e ogni fase deve essere completata prima di passare alla fase successiva.
+Questa tipologia di processo è indicata per progetti che prevedono anche una componente hardware, per lo sviluppo di sistemi safety-critical (software degli aerei o dei treni) e quando il progetto è portato avanti da diverse aziende che lavorano ognuna a una parte diversa del software.\\
+Non è invece indicato per quei progetti in cui le fasi hanno un feedback verso una fase precedente. Tipicamente è difficile anche adottarlo laddove i requisiti non siano esattamente chiari all'inizio.\\
+Il vantaggio è di dare una grandissima importanza ai requisiti del software poiché si ritarda l'implementazione fino a quando i requisiti non sono chiari e molto ben definiti.\\
+Gli svantaggi principali di questa tipologia di sviluppo sono che una fase deve essere completata prima di potersi spostare alla fase successiva, perciò qualsiasi cambiamento è qualcosa di molto costoso.
+Se, ad esempio, un committente cambia un requisito, si deve tornare indietro attraverso le fasi già concluse.\\
+È bene dunque utilizzare questo processo di sviluppo in ambienti in cui i requisiti sono chiari e il contesto non è dinamico.
+Di solito questo modello è adottato per commesse governative in cui i requisiti sono messi a contratto.
+
+\subsection{Processo incrementale}
+Se nel processo a cascata le varie fasi sono chiaramente suddivise nel tempo e solo alla fine si arriva ad avere qualcosa di eseguibile, con il processo incrementale si cerca di arrivare quanto prima ad avere una versione eseguibile del sistema anche se questa avrà solo un sottoinsieme di funzionalità.
+In questo modo è possibile fornire una demo con un sottoinsieme delle funzionalità e man mano aggiungere le restanti.\\
+Il committente potrà avere aggiornamenti testabili sullo sviluppo con il vantaggio che potrà subito dare un feedback con conseguente modifica graduale funzionalità per funzionalità.\\
+Questo approccio è usato solitamente quando in un progetto i requisiti non sono chiari dall'inizio e potrebbero cambiare ed evolvere durante lo sviluppo del progetto.
+Questo tipo di processo permette di accomodare anche i cambiamenti dei requisiti perché di fatto l'attività di analisi dei requisiti perdura durante tutto lo sviluppo.\\
+Questo tipo di sviluppo ha un costo molto più basso per rispondere ai cambiamenti, sia dei requisiti che dell'implementazione; inoltre la documentazione è più concisa ed è molto più facile avere feedback dal committente e dall'utente finale che non devono immaginare il prodotto leggendo documenti ma provarlo fisicamente con la demo.\\
+Questo tipo di approccio ha anche degli svantaggi tra cui il management aziendale.
+Con il processo a cascata è tutto ben chiaro e si riesce a tracciare meglio lo stato di avanzamento del progetto.
+Con questo tipo di approccio invece i manager perdono un po' il controllo perché fanno fatica a capire a che punto del progetto si è arrivati.
+È anche più difficile capire se si è in anticipo, giusti o in ritardo nei tempi ed è complicato mantenere una documentazione chiara poiché non è scritta ed aggiornata rigorosamente come nel processo a cascata.
+Spesso infatti bisogna riscrivere parti di codice con la conseguenza che la documentazione non è quasi mai allineata.\\
+Un altro svantaggio è legato al fatto che si ammetta la possibilità di apportare cambiamenti in corso d'opera necessari ad integrare altre parti di codice che vengono aggiunte.
+È quindi facile che il codice sorgente degradi molto più facilmente se non vengono intraprese delle azioni per ripristinare la qualità del codice.
+La qualità può degradare talmente tanto che l'aggiunta di una nuova funzionalità potrebbe essere molto difficile e pertanto richiedere molto tempo.
+
+\subsection{Processo di integrazione e configurazione}
+Questo processo prevede che lo sviluppo del software si avvalga di codice di terze parti che deve solo essere riconfigurato per far funzionare il sistema.
+È un approccio basato sul riuso di codice già sviluppato (bagaglio aziendale) e sull'utilizzo di codice terzo già presente sul mercato.\\
+I componenti utilizzati hanno la necessità di essere configurati per rispondere al problema specifico oppure devono essere modificati perché rispondono solo parzialmente al bisogno.\\
+Tipicamente si inizia anche in questo caso dalla specifica dei requisiti perché i problemi da risolvere guidano la scelta dei componenti da utilizzare.\\
+Dopodiché inizia una fase di indagine alla ricerca dei componenti già disponibili sul mercato.
+Si possono trovare diversi componenti per una stessa funzionalità e va quindi selezionato quello che più si addice al caso specifico.
+Terminata questa fase è necessario passare ad una fase di raffinazione dei requisiti nella quale si valutano i componenti trovati anche in base alle pre-condizioni che gli stessi richiedono.
+Se si riesce a raggiungere un compromesso allora si può proseguire con tali componenti altrimenti dovranno essere adottate delle strategie alternative.\\
+Il vantaggio principale di questo metodo è il basso costo perché si massimizza il riutilizzo ma unito a questo c'è anche un basso rischio perché i componenti utilizzati sono per la maggior parte già testati e funzionanti.\\
+Questo permette di ottenere una consegna veloce dell'artefatto finale.\\
+Solitamente però la qualità è inferiore a software prodotti completamente con codice interno poiché i componenti vengono adattati e non nascono con il preciso scopo per cui vengono in realtà utilizzati.\\
+È anche possibile che ci si trovi nella situazione di scendere a compromessi con i requisiti perché non è detto che i componenti necessari siano già stati sviluppati da terzi e che rispondano al 100\% alle richieste del committente.
+Lo svantaggio principale è che si perde il controllo sull'evoluzione del software perché di fatto il lavoro consiste più sull'integrazione dei componenti già esistenti che non sullo sviluppo.\\ Potrebbe inoltre succedere che la manutenzione di un componente utilizzato sia discontinua o che addirittura venga abbandonata.\\
+Questo approccio è consigliabile in casi particolari come ad esempio una start-up nella quale si necessita di un prodotto in tempi brevi da poter mostrare ai potenziali investitori.
+
+\subsection{Attività comuni tra i modelli}
+Tutti e tre i processi hanno quattro attività/fasi in comune:
+\begin{itemize}[noitemsep]
+    \item Specifica
+    \item Design e implementazione
+    \item Validation
+    \item Evolution
+\end{itemize}
+Considerando lo sviluppo prolungato del software, con un contratto di manutenzione del codice o di aggiornamento, queste fasi sono da considerare come cicliche e pertanto vanno ripetute spesso.
+
+\subsubsection{Specifica}
+L'obiettivo di questa fase, in qualsiasi modo essa venga eseguita, mira a capire quali siano le necessità e le funzionalità che il software deve avere.
+Questa è un'attività critica perché, se non si comprende a pieno il problema da risolvere, si finisce per risolverne uno diverso da quello richiesto.\\
+La raccolta dei requisiti è dunque uno passo importante e da non sottovalutare.\\
+Una volta raccolti i requisiti è bene fare uno studio di fattibilità cioè uno studio sulla fattibilità del progetto stesso sulla base dei dati a disposizione ed anche dell'esperienza pregressa.\\
+Comprovata la fattibilità del progetto, quello che si ottiene è un documento dei requisiti in cui sono descritti in modo chiara le funzionalità del software ed il modo in cui esse andranno implementate.\\
+La raccolta dei requisiti è portata avanti in tre fasi:
+\begin{itemize}[noitemsep]
+    \item Prima fase: analisi dei requisiti ed elaborazione di una descrizione del sistema da implementare. Può essere fatta sia prendendo come esempio il sistema attualmente in uso, sia tramite una discussione con gli utenti finali. Può contenere dei modelli, delle astrazioni, dei prototipi e tutto ciò che aiuta a capire quello che si dovrà implementare.
+    \item Seconda fase: è la specifica dei requisiti, cioè si scrive nero su bianco quello che si è raccolto. Ci sono due macro-suddivisioni di requisiti:
+    \begin{itemize}[noitemsep]
+        \item user-requirements: più astratti e discorsivi
+        \item requisiti di sistema: più dettagliati e specifici delle funzionalità da implementare
+    \end{itemize}
+    \item Terza fase: è quella della validazione dei requisiti. Si controlla cioè la consistenza, se ci sono delle contraddizioni o delle lacune che vanno colmate. È importante identificare eventuali errori prima di procedere.
+\end{itemize}
+
+\subsubsection{Design e implementazione}
+Per design si intende la progettazione mentre per implementazione la scrittura del codice.\\
+L'obiettivo di questa specifica è tradurre ciò che si è carpito nella fase di raccolta dei requisiti in un programma.\\
+La fase di design consiste nella creazione di un modello in modo da avere presente come comunicano i componenti tra di loro, tra i sistemi, l'organizzazione dei dati, il database, le API.
+Una volta definita la struttura, bisogna passare alla fase di implementazione cioè allo sviluppo vero e propria.\\
+Ovviamente il design e l'implementazione cambiano in base al tipo di sistema che si decide di implementare.\\
+Per prima cosa bisogna decidere l'architettura del sistema cioè la struttura ad alto livello, i componenti e come essi comunicano tra loro, dopodiché si progetta il design del database per capire quali strutture dati principali verranno utilizzate.
+Infine vanno definite le interfacce dei componenti e come esse comunicano tra di loro.\\
+Senza una chiara interfaccia definita prima, quando si dovranno integrare i componenti tra di loro, dovranno essere apportate delle modifiche e delle integrazioni e non sempre questo è facile.\\
+Fatto ciò è possibile definire i dettagli del design dei singoli componenti e i dettagli per l'implementazione.
+
+\subsubsection{Validation}
+La validazione è divisibile in due macro-tipologie; la prima è nota come \textbf{check} ed è di fatto una verifica del codice.
+Il verificatore legge il codice per cercare eventuali problemi o errori all'interno dello stesso.
+Questo sistema è utilizzato anche per vedere se sono presenti vulnerabilità all'interno del codice.\\
+La seconda è definita \textbf{program-testing} cioè la creazione di scenari di test per comparare i risultati che il componente elabora con le assunzioni fatte a priori.
+Il testing viene condotto in vari momenti:
+\begin{itemize}
+    \item Component o unit testing: è condotta durante lo sviluppo del software. Ogni componente è testato come qualcosa di a sé stante
+    \item System-testing: prevede di integrare tutti i componenti in un sistema finale per testare le interazioni tra i componenti
+    \item Acceptance testing: è il test che viene condotto quando il sistema software è nelle condizioni operative finali. Si controlla come il sistema si comporta in produzione poco prima di rilasciarlo al cliente
+\end{itemize}
+
+\subsubsection{Evolution}
+Questa attività si concentra sul garantire al cliente la correzione di eventuali bug, ma anche l'evoluzione dovute a nuove richieste.\\
+Il processo di evoluzione prevede un controllo del sistema in esecuzione che in alcuni casi è di un'azienda terza, la proposizione di nuove modifiche e la loro attuazione.\\
+La nuova versione rilasciata con le modifiche apportate diventerà così la versione corrente ed in esecuzione.

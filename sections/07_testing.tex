@@ -1,0 +1,103 @@
+\section{Testing}
+\label{sec:07_testing}
+In caso di testing all'inizio del processo di sviluppo, si tratta di \virgolette{fase di validazione}.
+Una volta implementato il software è necessario accertarsi della coerenza e del corretto funzionamento del sistema sia per quanto riguarda errori di programmazione sia per quanto riguarda errori dovuti al disallineamento tra i requisiti e il codice implementato.\\
+L'obiettivo del testing è quello di trovare eventuali errori, verificare se il software rispetta e fornisce un'implementazione corretta dei requisiti raccolti in precedenza e permette di mantenere alta la qualità del codice.
+La soluzione idilliaca sarebbe la presenza di un test per ogni funzionalità o per combinazioni di funzionalità se queste comunicano tra loro.\\
+È da aspettarsi anche la presenza di problemi di difformità dai requisiti oppure errori sul codice che provocano il blocco del sistema o generano errori inaspettati.
+Questi errori vengono tipicamente chiamati \textbf{bug}.\\
+Quando si testa un pezzo di software, il programma soggetto a testing è detto \acrfull{SUT}.
+A questo sistema viene fornito un input e si attende la produzione dell'output; se l'output che è quello atteso, allora il test passa, altrimenti il test fallisce.\\
+C'è tuttavia una terza condizione; se durante l'esecuzione accade un errore critico (es: divisione per zero), il sistema non produce l'output, ed in questo caso si parla di errore e non di fallimento.\\
+L'obiettivo principale del testing viene fatto risalire alle considerazioni di Dijkstra.
+Egli disse che il testing non può dimostrare la correttezza di un programma in quanto il programmatore potrebbe anche essersi dimenticato un test, tuttavia può controllare la presenza di alcuni errori nel programma.\\
+Per avere la certezza che il sistema sia corretto al 100\% bisognerebbe scrivere tutti i casi di test cioè $\lim_{x \to \infty}\textrm{ dove }x = \textrm{Numero di casi di test}$.\\
+Con il testing possiamo quindi cercare di trovare errori, ma non assicurarci che il programma sia corretto.\\
+Non potendo avere la certezza della correttezza, ci si affida alla confidenza nell'aver testato la maggior parte delle combinazioni di input prima di consegnare il prodotto al cliente.\\
+La confidenza non si può testare ma potrebbe essere guidata dalle funzionalità presenti nel software; la confidenza varia in base a qual è l'obiettivo del software (un software avionico richiede una maggior confidenza), anche gli utenti finali possono aiutare a capire quale deve essere la confidenza e lo stesso anche gli ambienti commerciali nei quali si sta operando (spesso è necessario uscire presto sul mercato anche con versioni poco testate).
+
+Esistono due tipi diversi di verifica sulla correttezza e sulla presenza di errori.
+Uno è il \textbf{software testing} che prevede l'esecuzione del programma attraverso diversi scenari, l'altro è la \textbf{code inspection} o review che prevede di controllare il codice e la documentazione visivamente per scovare eventuali errori.
+La seconda ha alcuni vantaggi in quanto non è limitata al codice, ma si estende anche alla documentazione e non soffre il mascheramento degli errori perché non si esegue il codice.\\
+La prima invece può anche essere applicata a versioni incomplete del software e può essere estesa anche alla qualità, ai commenti, al controllo delle inefficienze ed in generale a controllare di aver correttamente seguito una particolare convenzione nella codifica.
+
+\subsection{Development testing}
+Si possono identificare tre fasi di software testing; la prima è il development testing condotto durante lo sviluppo dagli sviluppatori stessi.
+L'obiettivo è scoprire difetti all'interno del software attraverso l'utilizzo di strumenti come debugger.\\
+L'approccio adottato è abbastanza semplice; viene localizzato il punto di errore (fault), corretto e rimosso.\\
+Il development testing viene condotto in maniera gerarchica e in diverse fasi.
+
+\subsubsection{Unit testing}
+La prima fase è detta unit test (test dell'unità) e si concentra sui singoli metodi o singoli oggetti o singole classi.\\
+Ogni parte viene testata in isolamento.
+Data una classe, se ne testa ogni contenuto e si esercitano gli oggetti in tutti i loro stati possibili.\\
+Tuttavia eseguendo i test in modo isolato è difficile avere totale completezza.\\
+Uno unit test è un pezzo di codice composto da una parte iniziale che rappresenta il setup del test e porta la classe da testare in uno stato “testabile” (es. accende il dispositivo e riempie il \acrshort{DB}), una parte di codice che esercita la funzionalità da testare ed una parte finale assertiva in cui sono formulate della asserzioni sullo stato raggiunto e sull'output prodotto.\\
+Se tutte le asserzioni sono verificate, il test passa; se anche una singola asserzione non è verificata il test fallisce.\\
+È auspicabile che i test di unità siano eseguiti in modalità automatizzata e batch.
+Il mock è un sostituto dell'unità che presenta la stessa interfaccia e viene richiamato esattamente nello stesso modo, ma i metodi ritornano dei valori costanti.
+Utilizza la stessa interfaccia degli oggetti che sta sostituendo, ma non ritorna i veri dati.\\
+È meglio utilizzare un mock anche se si possiede una classe sensore già pronta perché così è più facile isolare l'errore.
+Ad esempio si possono usare dei mock per i dati del \acrshort{DB} così che si possa escludere un problema nel database in caso di fallimento del test.\\
+Gli scenari che vanno testati sono quelli che non provocano errori così da controllare se il flusso di esecuzione è corretto.
+Dopodiché si passa al testing di valori in input scorretti o che il sistema non si aspetta per controllare se il sistema risponde con l'errore corrispondente.\\
+Lo spazio per le prove sull'input è molto grande, quindi si devono scegliere i valori da utilizzare e per farlo viene utilizzato l'\textbf{equivalence partitioning} cioè si partiziona l'input in classi di equivalenza e si assume che tutti i valori in quelle classi abbiano lo stesso comportamento.\\
+Una volta partizionato lo spazio degli input si devono scegliere i valori da selezionare ed anche per questo esistono delle linee guida.
+Solitamente si scelgono dei valori agli estremi del dominio ed un valore centrale.\\
+Quando gli input sono sequenze o array si devono testare sequenze con differenti numeri di elementi, le sequenze con un elemento e con zero elementi.\\
+Infine bisogna forzare l'input per generare almeno una volta i casi di errore previsti, per verificare che sia tutto corretto (testing delle eccezione e dei casi d'errore).
+
+\subsubsection{Component testing}
+Durante la fase di component testing le classi, dove necessario, vengono messe in relazione tra loro e viene testata l'interfaccia di comunicazione e come si relazionano tra di loro.\\
+Si deve verificare che il comportamento di una classe sia corretto nel momento in cui viene messa in relazione con altre classi.\\
+Questa fase ha senso solo nel quando la fase di unit testing è stata eseguita in maniera abbastanza esaustiva e completa.\\
+Il component testing coinvolge le modalità in cui una classe utilizza i servizi delle altre e come avviene lo scambio dei dati.
+Dunque bisogna testare i dati che vengono comunicati da una classe all'altra sia passandoli come parametri, sia usando l'eventuale memoria condivisa, sia usando l'interfaccia procedurale (protocollo implicito che definisce l'ordine con cui i metodi vanno richiamati).\\
+Il primo ordine di errore è legato ad errori nell'utilizzo dell'interfaccia, come ad esempio dati di tipo sbagliato o passati nell'ordine sbagliato.
+Possono esserci anche errori legati ad assunzioni sui dati ricevuti, come ad esempio aspettarsi che la lista fornita dalla classe mittente sia ordinata.
+Infine ci potrebbero essere anche errori legati al timing.\\
+Per testare l'interfaccia è bene utilizzare i valori estremi nei loro intervalli di validità.
+Nel caso di puntatori a memoria, si può testare il passaggio di puntatori nulli.\\
+I test devono tentare di mandare in fail uno dei due componenti oppure eseguire degli \textbf{stress-test} inviando dati con una frequenza molto più alta del normale.
+
+\subsubsection{System testing}
+Infine, il system testing è la fase di test a livello di sistema che si concentra sull'interazione tra tutti i componenti che concorrono all'esecuzione del software.
+Il focus in questo caso è sull'interazione tra i vari componenti per implementare le funzionalità ad alto livello richieste dagli stakeholders.
+Si testano quindi le funzionalità utili per l'utente finale ad esempio l'interfaccia web con il backend di un'applicazione web.\\
+Per prima cosa si deve verificare la compatibilità dei componenti e se interagiscono e trasferiscono correttamente i dati tra loro.
+Si parte quindi dagli use-case che rappresentano una sorgente di informazione per verificare il comportamento del sistema.\\
+Non potendo testare tutto ci si focalizza sulle cose più importanti richiedendo che tutte le istruzioni del sistema siano eseguite almeno una volta al termine dell'esecuzione del caso di test oppure richiedendo che ogni funzionalità del menù esposto all'utente venga eseguita almeno una volta oppure che vengano testate delle combinazioni di queste funzionalità.\\
+Si deve anche verificare che la gestione degli errori sia implementata correttamente quindi deve essere prevista l'esecuzione delle funzionalità sia su input corretti che su input scorretti per controllare se il sistema risponde col messaggio di errore corretto.
+
+L'approccio di programmazione \textbf{test-driven} consiste nello scrivere i casi di test ancor prima di aver implementato le varie funzionalità.\\
+Il processo produttivo in questo caso è: aggiunta di una funzionalità vuota, creazione del caso di test che se eseguito sicuramente fallirà perché il corpo della funzione è vuoto, implementazione della funzione che soddisfa il caso di test, esecuzione del test e se fallisce iterazione del processo perché vuol dire che la funzione non è ancora implementata correttamente.\\
+L'obiettivo di questo approccio è molteplice; scrivere il caso di test obbliga a pensare alla funzionalità in termini di cosa deve fare, invece del come deve farlo.\\
+Tipicamente sviluppando il caso di test a posteriori si implementa la funzionalità solo dalla parte \virgolette{come} e non dalla parte \virgolette{cosa}.\\
+L'utilizzo di questa metodologia ha numerosi vantaggi.
+Innanzitutto, i casi di test coprono bene il codice dell'applicazione, si possono inoltre eseguire i regression test cioè esecuzione dei test man mano che si sviluppa una nuova funzionalità complessa così da accertarsi che le nuove implementazioni non abbiano compromesso funzionalità già implementate, si semplifica anche l'attività di debugging perché ogni caso di test si riferisce ad una singola funzionalità e se fallisce si sa con precisione quale controllare.\\
+I casi di test a prescindere da tutto fungono anche da documentazione per il sistema.
+
+\subsection{Release testing}
+Una volta che è stata implementata la release (parziale o finale) da consegnare, il team deve testarla prima di consegnarla al cliente.\\ Tipicamente vengono eseguiti test differenti rispetto al development testing per controllare eventuali errori di diversa natura riguardanti i requisiti richiesti.\\
+Per questa fase si utilizza un approccio \textbf{black-box} cioè ci si limita ad un comportamento input/output con asserzioni che vengono formulate solo sull'output che viene prodotto e si prescinde dai componenti che compongono il sistema.\\
+Le differenze tra il system testing ed il release testing sono:
+\begin{itemize}[noitemsep]
+    \item Il release testing è affidato a un team esterno
+    \item Il system testing è incentrato sulla ricerca di difetti
+    \item Il release testing verifica che il sistema risponda in maniera corretta ai requisiti
+\end{itemize}
+Un modo per condurre questo test è quello basato sugli scenari; seguendo gli scenari, ci si basa su casi di utilizzo realistici.
+Un secondo ordine di test si può condurre sulle performance del sistema attraverso stress-test per il sovraccarico deliberato.\\
+Se il sistema supera il release testing, può essere consegnato al cliente.
+
+\subsection{User testing}
+È l'ultima fase di testing, che prevede il coinvolgimento del cliente ma non è detto che venga fatta poiché dipende molto dalle politiche aziendali.
+L'obiettivo è testare il software nell'ambiente in cui viene utilizzato perché l'ambiente di esecuzione potrebbe influenzarne l'utilizzo.\\
+Vengono coinvolti utenti e stakeholder prima con un \textbf{alfa-test} composto da un numero molto limitato di utenti, poi con un \textbf{beta-test} che invece coinvolge un numero maggiore di utenti tenuti a segnalare la presenza di errori.
+Alla fine si esegue l'\textbf{acceptance-test} che coinvolge gli utenti finali.\\
+È quindi l'utente finale che decide se la versione del software è adatta alla produzione o meno.
+Se mancano funzionalità o sono presenti errori il software deve essere rielaborato.\\
+All'inizio dello sviluppo vengono definiti i criteri di acceptance-test, dopodiché viene definito un piano di acceptance-test che può essere descritto ad alto livello (descrive quali requisiti sono ricoperti dall'acceptance-test e quali no).
+Quando la release è pronta per essere consegnata, il cliente prima di saldare il pagamento, esegue i test di accettazione.
+Se falliscono si apre una contrattazione tra il cliente e lo sviluppatore per capire se il software può comunque essere accettato dal cliente oppure se c'è bisogno di una revisione del codice e del sistema.\\
+Per quanto riguarda il metodo agile il test ha un ruolo molto importante perché gli utenti/clienti fanno parte del team di sviluppo e partecipano attivamente alle discussioni è quindi essenziale che questi utenti/clienti rappresentino tutte le categorie destinatarie del software.

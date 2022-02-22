@@ -1,0 +1,142 @@
+\section{Agile software development}
+\label{sec:03_modello_agile}
+Negli anni 80-90 quando sono nate le tecniche di gestione di un processo software, l'obiettivo era quello di sviluppare un software di alta qualità, quindi è stata prestata attenzione ad una pianificazione dettagliata con controlli rigorosi sia alla parte di design, sia alla parte di avanzamento.
+Inoltre, sono anche stati creati dei tool per visualizzare graficamente lo stato di avanzamento del processo.\\
+Veniva utilizzato un approccio plan-driven, il più appropriato per il software del tempo in quanto commissionato da agenzie governative per il controllo di infrastrutture safety-critical.\\
+Software di questo tipo richiedono una valutazione a lungo termine; ad esempio il software utilizzato negli aerei deve ipotizzare l'hardware presente tra una decina di anni in modo da poter continuare ad essere utilizzato dato che servono molti anni per scrivere software di questo tipo.
+
+Alla fine degli anni 90 il mercato è evoluto passando dalla quasi totalità di commesse governative a richieste da parte di aziende in cerca di software a supporto del loro business.\\
+Questo tipo di software ha caratteristiche molto diverse rispetto alle commesse governative.
+Per questo motivo si è resa necessaria una nuova metodologia di sviluppo che prevedesse delle consegne durante la fase di costruzione e non solo alla fine del ciclo di sviluppo.\\
+Il costo per l'approccio a piani su progetti di piccola media grandezza era inoltre troppo alto ed il modello adottato rende difficile rispondere velocemente al cambiamento dei requisiti.
+
+Sono emerse così delle metodologie di sviluppo software pensate per rispondere a queste esigenze.
+La nuova metodologia è stata definita \textbf{AGILE} poiché è snella e pronta al cambiamento.\\
+Nello sviluppo agile le varie fasi proseguono contemporaneamente e terminano solo nel momento in cui il progetto software viene concluso.
+Perciò le fasi di raccolta di requisiti, valutazione e comprensione di essi viene svolta in parallelo alle altre e non prima dello sviluppo.\\
+Il sistema è sviluppato con una metodologia basata su incrementi successivi.
+Si stabilisce un ritmo all'inizio e lo si mantiene durante tutto lo sviluppo.
+Il ritmo tra i vari tempi di sviluppo intermedi può variare dalle 2 alle 4 settimane ed allo scadere del tempo prestabilito viene rilasciato un prodotto (una nuova versione, funzionalità, aggiornamento...).\\
+Le fasi vengono sviluppate anche con l'aiuto dello stakeholder poiché servono dei feedback sul lavoro svolto che eventualmente comporti il cambio dei requisiti.\\
+La documentazione è ridotta al minimo e viene promossa una comunicazione più informale tra i partecipanti al progetto, riducendo le noiose riunioni formali degli anni 80.\\
+Il terzo fattore importante di questo modello di sviluppo è l'utilizzo di strumenti automatizzati per alleggerire il carico dello sviluppatore da azioni manuali e noiose che potrebbero portare ad uno spreco di tempo (es. sistemi automatici di test, sistemi che creano l'interfaccia grafica, sistemi di continuos integration...).
+Nel manifesto che definisce le linee guida della metodologia agile sono presenti quattro punti di rilievo:
+\begin{itemize}[noitemsep]
+    \item Le persone e la loro interazione rispetto al processo di sviluppo ed agli strumenti
+    \item Meglio un software funzionante che una documentazione esaustiva
+    \item Collaborazione con il committente
+    \item Rispondere ai cambiamenti in modo rapido e veloce (agile)
+\end{itemize}
+Ed alcuni principi fondamentali:
+\begin{itemize}[noitemsep]
+    \item \textbf{Coinvolgimento del cliente}: permette di comprendere i requisiti in modo accurato e corretto oltre che valutare quelli che sono i rilasci intermedi
+    \item \textbf{Consegna incrementale}: ad ogni step il software può essere installato ed utilizzato dal cliente
+    \item \textbf{Meglio le persone che i processi}: le skills dei programmatori sono molto importanti. Essi vengono spesso lasciati liberi di adottare le proprie preferenze di scrittura del codice
+    \item \textbf{Cambiamento dei requisiti}: è importante che l'architettura sia abbastanza agile da riuscire a cambiare i requisiti e l'implementazione in corso d'opera
+    \item \textbf{Mantenere la semplicità}: perché le cose semplici sono quelle che solitamente creano meno problemi
+\end{itemize}
+Le aziende che adottano le tecniche agili sviluppano software di piccole o medie dimensioni.
+Perché queste tecniche possano essere implementate, deve esserci la volontà del cliente di far parte del team di sviluppo.
+Senza questo il progetto deraglierà.\\
+È importante anche che ci siano poche entità esterne che pongano dei vincoli.
+Ad esempio, per il software medicale lo sviluppo agile non funziona.\\
+Lo sviluppo agile è tipicamente condotto insieme a tecniche agili di project-management come lo \textbf{SCRUM}.
+Lo SCRUM è una metodologia di gestione del processo che può essere adattata anche a progetti diversi da quello software.\\
+Dopo la loro definizione, i processi agili hanno avuto una radicalizzazione che ha condotto a quella che viene definita programmazione estrema, dove le caratteristiche dell'agile vengono portate all'estremo.
+Ci sono varie versioni del software rilasciate ogni giorno, tutti i test devono ritornare esito positivo perché il software possa essere compilato e consegnato e c'è una continua integrazione tra i componenti del software anche quotidianamente.
+Altre caratteristiche della programmazione estrema sono il design molto semplice, un tipo di sviluppo test-first ed il pair programming.\\
+Le \textbf{user-story}, descrizioni di scenari nei quali il software una volta sviluppato sarà integrato, sono delle brevi narrazioni meglio comprensibili sia dall'utente finale che dallo sviluppatore.\\
+Sono scritte dal punto di vista dell'utente che racconta ciò che vorrà fare con il suo prodotto.\\
+Ogni user-story è messa in quella che viene definita \textbf{user-card} cioè una breve storia nella quale sono integrati i vari bisogni degli utenti.
+A partire dalle user-story vanno sviluppate delle \textbf{task} che spezzano la user-story in diverse feature da implementare all'interno del software.
+Questo lavoro è fatto dal team di sviluppo supportato dallo stakeholder che diventa parte del team di sviluppo stesso.
+Una volta definite le task si deve stimare l'effort necessario (es: ore o giorni) necessarie ad uno sviluppatore per risolvere una task.\\
+È importante avere anche una valutazione dell'importanza delle task, per concentrarsi prima su quelle che hanno un punteggio più alto.
+Fatto ciò è si può pensare allo sviluppo.
+
+\subsection{Test-driven}
+Una delle modalità di sviluppo utilizzate è detta test-driven, sviluppo guidato dai test.
+In passato i test venivano scritti dopo il software, in questo contesto tuttavia si inverte la relazione temporale ed i test sono scritti prima.
+È così possibile utilizzarli durante lo sviluppo del codice per trovare gli errori già durante lo sviluppo.
+Fintanto che le funzionalità correnti non sono tutte corrette lo sviluppo non può proseguire per evitare situazioni di contrasto successive generate degli errori e dalla loro risoluzione.
+Posticipare la correzione significa faticare di più per trovarne la causa e risolverlo.\\
+Il test incrementale va di pari passo con lo sviluppo incrementale di uno scenario.
+Il punto critico è che per scrivere un test si deve avere ben chiaro il requisito poiché il test specifica quali input servono e quali output devono essere generati.
+Scrivere i test permette di verificare se lo sviluppatore ha compreso o meno il requisito e quindi è molto probabile che l'implementazione del codice sarà corretta con meno ambiguità e problemi di comprensione.\\
+Durante lo sviluppo test driven lo stakeholder va comunque coinvolto poiché sarà lui a specificare se i test stanno venendo eseguiti nei contesti giusti di operatività del software.\\
+Adottare questa metodologia significa anche avere a disposizione degli strumenti automatizzati per l'esecuzione dei test in quanto gli scenari per i casi di test sono molti.\\
+In caso di cambiamenti in corsa alcune funzionalità possono essere sviluppate come implementazioni di altre funzionalità, quindi sono necessari dei componenti per agevolarne l'implementazione.\\
+Inevitabilmente, quando si sviluppa per incrementi successivi, la qualità del codice può andare scemando ed i cambiamenti che si dovranno affrontare in futuro saranno sempre più costosi e difficili da gestire.
+È importante dunque intraprendere delle attività di miglioramento del codice durante la produzione, cambiandone l'architettura e riportando la qualità ad un livello accettabile.
+Un'attività di questo tipo fatta a software completato può essere molto costa, mentre fatta volta per volta risulta essere più facile ed economica.\\
+
+\subsection{Pair programming}
+Un altro concetto importante è il pair programming, cioè due sviluppatori che lavorano su un solo computer ad una stessa funzionalità.
+Nel manifesto agile i ruoli non sono ben definiti ed il lavoro è alternato tra i due programmatori considerando però che le coppie sono molto variabili e dinamiche.\\
+Ci sono numerosi vantaggi nell'utilizzare questa tecnica.
+Il codice, o una parte di esso, non è di un solo sviluppatore, ma di più dipendenti e conseguentemente tutti hanno interesse che il codice venga scritto in maniera corretta e comprensibile.
+Un altro vantaggio è che il programmatore che non sta scrivendo può fornire un aiuto a chi sta scrivendo ed un punto di vista diverso che può aiutare a non commettere errori.
+Si promuove, inoltre, la condivisione della conoscenza che a sua volta ha numerosi vantaggi.
+Innanzitutto, se c'è da apportare una modifica possono farla più persone e se un membro del team dovesse cambiare, la sua conoscenza non andrebbe persa, ma rimarrebbe comunque all'interno del team attraverso gli altri componenti.
+
+\subsection{Agile progect management}
+L'agile project management può essere usato in vari contesti.
+Nel nostro caso ci si concentrerà sul contesto dello sviluppo del software.
+Ci sono alcune fasi che caratterizzano lo sviluppo tramite metodologia agile:
+\begin{itemize}[noitemsep]
+    \item \textbf{Fase iniziale}: si esegue il setup del progetto in cui si definiscono gli obiettivi generali e si abbozza l'architettura del software anche se a grandi linee
+    \item \textbf{Fase centrale}: lo sviluppo avanza per cicli (sprint). Durante uno sprint si sviluppa un incremento che alla fine dello sprint andrà consegnato
+    \item \textbf{Fase finale}: alla fine degli sprint c'è la conclusione del progetto. Durante questa fase si scrive la documentazione e viene controllato l'intero progetto.
+\end{itemize}
+Il \textbf{product backlog} è la \virgolette{to-do list} che contiene tutte le funzionalità che dovranno essere implementate.
+Il backlog inizialmente viene riempito con le user-story, oppure con il sistema attualmente in uso ed il product-owner (committente o stakeholder), seleziona quali sono le funzionalità che vanno inserite nello sprint successivo.
+Questo è sufficiente per iniziare il primo sprint.\\
+Per iniziare vengono selezionate le entry con priorità più alta.
+I task sono selezionati fintanto che non viene saturata la velocity del team.
+All'inizio la velocity sarà una misura imprecisa poiché è molto difficile da misurare; viene tuttavia raffinata man mano con l'avanzare degli sprint.\\
+Ogni giorno in mattinata il team si riunisce per lo SCRUM e gli sviluppatori aggiornano il team sui progressi del giorno prima, sui task su cui lavoreranno durante la giornata e gli eventuali problemi che hanno riscontrato.\\
+La durata dello sprint è fissa e nel caso in cui una funzionalità sia stata sottostimata e non sia stata conclusa viene rimossa dal backlog così da rispettare la scadenza (anche con un sottoinsieme di obiettivi).\\
+Durante lo sprint, il team è isolato e tutte le comunicazioni sono affidate allo scrum master così da evitare di disturbare il team e permettergli di raggiungere gli obiettivi prefissati.\\
+Ogni sviluppatore prende delle task dal backlog e le lavora poi, quando il task è completato, viene spostato nella colonna \virgolette{completato} e lo sviluppatore può cominciare a lavorare su un altro task.
+Alla fine dello sprint si deve consegnare l'incremento.
+Nel farlo viene organizzata una sprint review durante la quale si pensa anche ad eventuali miglioramenti in vista degli sprint successivi.
+Dopodiché vengono inserite altre task nello sprint backlog ed il ciclo ricomincia.
+Durante l'ultimo meeting è presente anche il product owner che testerà il prodotto finale.\\
+
+I benefici dello scrum sono molteplici tra cui il fatto che il prodotto è diviso in parti gestibili e comprensibili sia dal product owner che degli sviluppatori, eventuali requisiti che cambiano o su cui non sono state ancora prese delle decisioni non ritardano lo sviluppo, il team ha una conoscenza del sistema nella sua interezza e il cliente può fornire feedback sulle consegne di modo che lo sviluppo possa essere gestito con maggiore velocità.\\
+Nel corso del tempo si è pensato di estendere la metodologia scrum anche ad aree per cui non era mai stata utilizzata come, ad esempio, i sistemi distribuiti.\\
+La metodologia scrum è pensata per situazioni in cui tutti gli sviluppatori sono nella stessa sede fisica.
+Quando questo non succede è importante che il product owner faccia visita fisicamente al team di sviluppo.
+Se gli sviluppatori sono distribuiti geograficamente è comunque importante mantenere una comunicazione informale (es: video call o instant messaging) ed avere un sistema di integrazione continua così che tutti gli sviluppatori abbiano cognizione del sistema che sta stanno creando.\\
+Alcune aziende hanno provato a capire se la metodologia agile potesse scalare così da essere utilizzata anche in progetti di grandi dimensioni con team composti da molte persone o in progetti di lunga durata (non solo mesi, ma anche anni).\\
+Sono state così formulate due dimensioni di scala:
+\begin{itemize}[noitemsep]
+    \item Scala nelle dimensioni del software
+    \item Scala nelle dimensione dell'organizzazione
+\end{itemize}
+Tutte le proposte formulate per risolvere il problema della scalabilità concordano sul fatto che va mantenuta la flessibilità, che i rilasci debbano essere molto frequenti e che la comunicazione sia importante.\\
+Un problema tipico che può presentarsi quando si utilizza la tecnica agile è quello della manutenzione.
+Questa tecnica è infatti molto performante quando si tratta di sviluppo ma poco quando si tratta di mantenimento del software creato cosa che dovrebbe comunque essere supportata.\\
+Sintetizzando si possono individuare due problemi fondamentali sul problema del mantenimento:
+\begin{itemize}[noitemsep]
+    \item Il software è difficile da mantenere perché non c'è una scrupolosa documentazione e se un membro del team originale dovesse lasciare il progetto porterebbe con sé varie conoscenze riguardo le decisioni prese durante lo scrum. Questo può capitare quando i progetti sono lunghi
+    \item Il cliente dovrebbe essere comunque coinvolto nel processo di manutenzione e già è difficile convincerlo a partecipare durante la creazione del software
+\end{itemize}
+Da qui la domanda: meglio Agile o Plan-driven?
+Per rispondere vanno fatte delle considerazioni:
+\begin{itemize}[noitemsep]
+    \item È importante avere una specifica e un livello di dettaglio alto prima dell'implementazione?
+    \item È realistico avere un approccio basato sui rilasci incrementali?
+    \item Sono anche da valutare le dimensioni del sistema software. Se il sistema può essere sviluppato da un team abbastanza piccolo, si può scegliere una metodologia agile. Viceversa, se il team è molto grande e se si preferiscono comunicazioni formali è meglio un approccio plan-driven
+\end{itemize}
+È quindi importante capire il tipo di sistema che si è chiamati a sviluppare; per esempio se la vita attesa del sistema è lunga, cioè se un sistema deve funzionare per molti anni, l'approccio agile non è il migliore.\\
+Bisogna anche capire quante inferenze esterne ci potrebbero essere sul prodotto software e conoscere il proprio team di dipendenti oltre al supporto tecnologico disponibile dato che il metodo agile funziona meglio laddove ci sono degli automatismi che risparmiano tempo ad azioni manuali.\\
+È importante definire il livello di skill dei componenti del team così che essi vengono lasciati liberi di prendere alcune decisioni.
+Alcune problematiche potrebbero emergere nel caso in cui il team sia distribuito geograficamente.\\
+In alcune organizzazioni si adottano dei processi di qualità che vincolano lo sviluppo perché si impone di motivare le decisioni prese e di scrivere i requisiti dettagliatamente prima di iniziare lo sviluppo.
+Questi vincoli vanno tenuti in considerazione per la scelta del metodo da adottare.\\
+Infine otrebbero esserci problemi nell'introdurre la metodologia agile in aziende abituate al modello plan-driven.\\
+La metodologia agile ha incontrato e incontra tutt'ora varie resistenze al momento della sua introduzione in azienda perché spesso i project manager non ne hanno una conoscenza approfondita e fanno fatica ad abbandonare qualcosa che conoscono bene per rischiare con un approccio innovativo.\\
+Inoltre spesso le grandi organizzazioni hanno delle procedure interne per il controllo e la verifica della qualità che di fatto sono in contrasto con le metodologie agili.\\
+In ultimo le metodologie agili prevedono la possibilità che i membri dei team, a seconda delle loro capacità, possano prendere delle decisioni.
+A questo si unisce anche l'attenzione alle resistenze di tipo culturale a livello dirigenziale nell'azienda del tipo \virgolette{si è sempre fatto così e non c'è motivo di cambiare}.

@@ -1,8 +1,8 @@
 \section{Architectural desing}
 \label{sec:06_architectural_desing}
 Dopo aver raccolto i requisiti, le funzionalità ed i servizi che il progetto dovrà fornire si passa alla progettazione del software.
-L'obiettivo della progettazione dell'architettura è quello definire come il software debba essere organizzato.
-È una fase intermedia che tra la definizione dei requisiti e la progettazione nel dettaglio del sistema.
+L'obiettivo della progettazione dell'architettura è definire come il software debba essere organizzato.
+È una fase intermedia tra la definizione dei requisiti e la progettazione nel dettaglio del sistema.
 È importante fare queste valutazioni ad alto livello per vari motivi:
 \begin{itemize}[noitemsep]
     \item Migliore comunicazione con lo stakeholder. Parlare ad alta voce della struttura ad alto livello può aiutare a non scordare dei dettagli
@@ -11,8 +11,8 @@ L'obiettivo della progettazione dell'architettura è quello definire come il sof
 \end{itemize}
 L'utilizzo della progettazione architetturale si concentra nel facilitare la discussione sul design del sistema e la sua documentazione ad alto livello.\\
 La sua produzione non è tanto un passo tecnico, quanto un processo che richiede di prendere delle decisioni.
-Per esempio, come i vari artefatti software verranno distribuiti nell'hardware, l'utilizzo di pattern architetturali che vengono riutilizzati nel tempo per realizzare determinati tipi di sistemi, la discussione su queste architettura permette inoltre di capire se è possibile soddisfare i requisiti non funzionali.\\
-Il sistema viene scomposto nei suoi componenti principali e così da capire se ognuno di essi ha una responsabilità definita, ambigua o distribuita su più componenti (questo causa problemi).\\
+Per esempio, come i vari artefatti software verranno distribuiti nell'hardware, l'utilizzo di pattern architetturali che vengono riutilizzati nel tempo per realizzare determinati tipi di sistemi, la discussione su questa architettura permette inoltre di capire se è possibile soddisfare i requisiti non funzionali.\\
+Il sistema viene scomposto nei suoi componenti principali così da capire se ognuno di essi ha una responsabilità definita, ambigua o distribuita su più componenti (questo causa problemi).\\
 Le conseguenze che una scelta di un'architettura può avere sono:
 \begin{itemize}[noitemsep]
     \item Performance
@@ -42,7 +42,7 @@ Il pattern architetturale in questione prevede tre ruoli:
     \item \textbf{Controller}: è responsabile di implementare la logica di business. Deve essere in grado di catturare le azioni dell'utente e rispondere alle richieste che arrivano
 \end{itemize}
 Per comprendere meglio si consideri ad esempio una webapp.
-Il web browser riceve una pagina html costruita dal componente view e tutte le interazioni che l'utente con il web browser rappresentano un evento grafico che il web browser invia al controller il quale riceve gli input e li elabora per poi eseguire l'update sul \acrshort{DB} attraverso il componente model.\\
+Il web browser riceve una pagina html costruita dal componente view e tutte le interazioni dell'utente con il web browser rappresentano un evento grafico che il web browser invia al controller il quale riceve gli input e li elabora per poi eseguire l'update sul \acrshort{DB} attraverso il componente model.\\
 L'MVC è utilizzato in Java anche per applicazioni desktop con grafica e per applicazioni Android.\\
 L'MVC andrebbe usato quando i modi di interagire o visualizzare i dati sono molteplici (varie schermate) poiché è meglio disaccoppiare i dati dalla loro presentazione così che si possano creare più modalità di visualizzazione dei dati sfruttando la stessa interfaccia con il \acrshort{DB}.
 Tuttavia il disaccoppiamento introduce un po' di complessità nel codice.
@@ -53,10 +53,11 @@ Si parte dal livello \virgolette{core}, centrale, si costruisce sopra di esso co
 Le comunicazioni sono solo tra strati adiacenti in modo da permette di utilizzare una strategia di sviluppo incrementale.
 Per cambiare uno strato bisogna però implementare tutte le interfacce del precedente così come sono implementate dallo strato da sostituire.
 Si prenda come esempio un sistema informativo; il primo stato comprende il sistema operativo ed il database, sopra c'è lo strato che implementa il core business, poi uno strato che si occupa dell'autenticazione e del management della user interface ed infine lo strato più in alto che gestisce l'interfaccia grafica.\\
-Tale archawitettura a strati è utilizzata dal sistema ISO/OSI per le comunicazioni di rete.\\
+Tale architettura a strati è utilizzata dal sistema ISO/OSI per le comunicazioni di rete.\\
 Anche il sistema operativo Android utilizza un'architettura a strati.\\
 Questo tipo di architettura è molto utilizzata soprattutto nella costruzione di servizi sopra altri servizi pre-esistenti ma si potrebbe anche utilizzare quando lo sviluppo dei vari strati è in capo a team di sviluppo diversi.
 È invece opportuno utilizzarla in caso di requisiti di sicurezza a più livelli poiché possono essere eseguiti controlli sulla sicurezza a più livelli, ed è possibile rimpiazzare uno o più layer fintanto che soddisfano la stessa interfaccia.\\
+Il vantaggio è la sicurezza multi livello garantita dalla possibilità di situare le risorse critiche nei layer più interni.\\
 Ci sono tuttavia degli svantaggi; non è sempre possibile raggiungere un livello di isolamento totale, perciò bisogna permettere dei \virgolette{buchi} per fare dei salti di layer.
 Un altro problema tipico riguarda le performance perché, ad esempio, per fare una chiamata dal layer più in alto a quello più in basso viene eseguita una lunga catena di chiamate.
 
@@ -73,7 +74,7 @@ Il pattern client-server prevede che ci siano uno o più componenti ad avere il 
 I server sono connessi a una rete attraverso la quale i client richiedono i servizi.
 Le richieste e le risposte sono gestite da un protocollo di comunicazione che, in quasi tutti i casi, è l'\acrfull{HTTP}.\\
 Questa struttura è consigliata quando si hanno dati messi a disposizione da una serie di servizi dislocati sul territorio.\\
-Avere più server permette di replicarli scalando in modo da prevedere un re-indirizzamento e gestire meglio il carico.
+Avere più server permette di replicarli scalando in modo da prevedere un reindirizzamento e gestire meglio il carico.
 Tra gli altri vantaggi c'è il fattore della scelta della posizione dei server che per ridurre la latenza della comunicazione possono essere scelti il più vicino possibile al client, in caso in cui uno dei server avesse problemi e non fosse più disponibile il servizio non verrebbe negato ai client.\\
 Tra gli svantaggi si considerino la difficoltà di prevedere le performance perché dipendono dal tipo e dal carico della rete ed il fatto che alcuni server potrebbero essere gestiti da terze parti.
 

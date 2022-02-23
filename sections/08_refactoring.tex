@@ -33,7 +33,7 @@ La definizione comprende varie casistiche tra cui:
 \end{itemize}
 Particolare attenzione va data al codice clonato cioè codice riutilizzato attraverso il copia-incolla.\\
 Di solito lo si attua anche per la creazione di funzionalità simili apportando quindi leggere modifiche al codice copiato.\\
-Questo sistema è perché prono alla propagazione di bug molto difficili da correggere (ci si deve ricordare tutti i punti in cui si è fatto il copia-incolla).
+Questo sistema è prono alla propagazione di bug molto difficili da correggere (ci si deve ricordare tutti i punti in cui si è fatto il copia-incolla).
 Fortunatamente esistono dei software che aiutano a trovare le parti clonate.\\
 
 \subsection{Processo e tipologie di refactoring}
@@ -52,7 +52,7 @@ I tipi di refactoring più comuni sono:
     \item \textbf{Extract method}: se alcune parti di uno o più metodi sono uguali si può prendere la parte di codice duplicata e creare un metodo a sé stante, così da non avere codice duplicato
     \item \textbf{Move method}: spostare il metodo da una classe all'altra perché sfrutta maggiormente i metodi della seconda
     \item \textbf{Replace temp with query}: invece di utilizzare variabili temporanee è preferibile utilizzare metodi che ne calcolano e ritornano il valore così da poterli utilizzare più volte in vari metodi.
-    \item \textbf{Replace parameter with method}: invece di calcolare un risultato su una variabile temporanea e poi passare tale valore come input di un metodo, si può passare ottenere quel valore all'interno del metodo invece di riceverlo come parametro
+    \item \textbf{Replace parameter with method}: invece di calcolare un risultato su una variabile temporanea e poi passare tale valore come input di un metodo, si può ottenere quel valore all'interno del metodo invece di riceverlo come parametro
     \item \textbf{Extract class}: se una classe ha troppi metodi o troppi dati vuol dire che ha troppe responsabilità. Tipicamente queste classi hanno delle responsabilità che sono poco coese e connesse tra di loro, per questo sarebbe bene spezzarle per avere delle responsabilità ben definite di modo che siano riutilizzabili più facilmente mantenibili
 \end{itemize}
 Altri tipi di refactoring più complessi che solitamente non possono essere fatti da uno strumento automatico a meno che non vengano eseguiti come sequenze di refactoring semplici sono:

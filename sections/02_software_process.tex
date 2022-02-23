@@ -4,7 +4,7 @@ L'ingegneria del software vuole portare tutti i vantaggi che ci sono negli altri
 Questi principi sono stati creati intorno agli anni 70-80 in cui chi scriveva software avrebbe dovuto creare un programma senza delle linee guida condivise.
 Anche nello sviluppo software si prende un prodotto grezzo e lo si lavora per ottenere un prodotto finito da consegnare.\\
 E perché è particolare dotarsi di un processo software?\\
-È utile per poter mettere ordine e pianificare in anticipo le varie fasi dello sviluppo così da avere un'idea chiara di degli obiettivi raggiunti e di quelli da raggiungere.\\
+È utile per poter mettere ordine e pianificare in anticipo le varie fasi dello sviluppo così da avere un'idea chiara degli obiettivi raggiunti e di quelli da raggiungere.\\
 L'obiettivo del processo software è quello di migliorare la produttività dei dipendenti (evitando sprechi di tempo) e soprattutto controllare la qualità del prodotto (sapere in ogni momento se quello che ho davanti è un artefatto finale o parziale).\\
 Solitamente più il processo software è di qualità, più sarà di qualità il prodotto finale.
 Per processo software si intende una serie di attività condotte e finalizzate allo sviluppo del prodotto finale.\\
@@ -17,7 +17,7 @@ Ci sono differenti processi, ma tutti hanno in comune alcune attività.
 \end{itemize}
 Il processo software è diviso in attività condotte per portare avanti lo sviluppo del software (es: creare il design dell'interfaccia utente, specificare il modello dei dati ecc...).
 All'interno del processo ci sono anche gli output del processo stesso (tipicamente sono gli output di un'attività che vengono prodotti anche come input per l'attività successiva), i ruoli per ogni persona che lavora al processo software, le pre e post condizioni (le prime devono essere vere prima dell'inizio e le seconde dopo la fine).\\
-La prima grande distinzione che facciamo tra i processi software:
+La prima grande distinzione che viene fatta tra i processi software è:
 \begin{itemize}[noitemsep]
     \item \textbf{Processi plan-driven}: hanno una struttura fissa nel tempo e sono rigidi. Tutte le attività sono pianificate in anticipo prima di iniziare a sviluppare
     \item \textbf{Processi AGILE}: hanno una struttura flessibile e sono adatti al cambiamento dei requisiti in corso d'opera. La pianificazione è fatta a grandi linee e viene precisata nel dettaglio man mano che il prodotto sta venendo costruito. I processi AGILE sono nati perché spesso i requisiti da implementare non sono molto chiari all'inizio ma diventano man mano più chiari in corso d'opera
@@ -27,7 +27,7 @@ Il sistema \textbf{Code and Fix}, che non è definibile modello, è un processo 
 Per prima cosa è necessario capire le necessità che devono essere implementate.
 Dopodiché si inizia l'implementazione di ciò che è stato richiesto.
 Ci sono delle condizioni da superare, dei testi.
-Se questi non passassero dovremmo fare delle azioni di fix.
+Se questi non passassero si dovrebbero condurre delle azioni di fix.
 Quando i test passano, allora si può consegnare il programma finale.
 Il programma viene scritto per interazioni successive ed è consigliabile solo per progetti con meno di 2000 righe di codice e per team sotto i 5 dipendenti.
 Di fatto questo \underline{non è un processo software}.
@@ -50,7 +50,7 @@ Attraverso i requisiti sono attribuite le varie responsabilità ai progetti soft
 La \underline{terza fase} è quella dell'implementazione.
 Una volta definito il progetto si comincia a implementare il progetto.
 Vengono scritti anche dei test (unit test) per verificare se i singoli componenti sono corretti o meno.\\
-Quando l'implementazione di tutti i componenti è completa e testata, si può passare alla fase di integrazione in cui tutti i componenti vengono uniti attraverso interazioni.
+Quando l'implementazione di tutti i componenti è completa e testata, si può passare alla \underline{fase di integrazione} in cui tutti i componenti vengono uniti attraverso interazioni.
 Da questo momento è altresì possibile testare il  sistema nella sua interezza e verificare se tutti i componenti comunicano in maniera corretta tra di loro.
 Una volta che il sistema è stato testato nella sua interezza è possibile consegnarlo al committente.
 Tuttavia il lavoro non è concluso ma si passa alla \underline{fase di manutenzione e aggiornamento del software}.\\
@@ -111,7 +111,7 @@ L'obiettivo di questa fase, in qualsiasi modo essa venga eseguita, mira a capire
 Questa è un'attività critica perché, se non si comprende a pieno il problema da risolvere, si finisce per risolverne uno diverso da quello richiesto.\\
 La raccolta dei requisiti è dunque uno passo importante e da non sottovalutare.\\
 Una volta raccolti i requisiti è bene fare uno studio di fattibilità cioè uno studio sulla fattibilità del progetto stesso sulla base dei dati a disposizione ed anche dell'esperienza pregressa.\\
-Comprovata la fattibilità del progetto, quello che si ottiene è un documento dei requisiti in cui sono descritti in modo chiara le funzionalità del software ed il modo in cui esse andranno implementate.\\
+Comprovata la fattibilità del progetto, quello che si ottiene è un documento dei requisiti in cui sono descritti in modo chiaro le funzionalità del software ed il modo in cui esse andranno implementate.\\
 La raccolta dei requisiti è portata avanti in tre fasi:
 \begin{itemize}[noitemsep]
     \item Prima fase: analisi dei requisiti ed elaborazione di una descrizione del sistema da implementare. Può essere fatta sia prendendo come esempio il sistema attualmente in uso, sia tramite una discussione con gli utenti finali. Può contenere dei modelli, delle astrazioni, dei prototipi e tutto ciò che aiuta a capire quello che si dovrà implementare.

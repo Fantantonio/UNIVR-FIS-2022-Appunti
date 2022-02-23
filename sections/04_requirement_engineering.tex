@@ -6,7 +6,7 @@ Ognuno dei requisiti risponde ad uno o più problemi degli utenti finali.\\
 I requisiti si possono scomporre attraverso una macro-suddivisione iniziale:
 \begin{itemize}[noitemsep]
     \item \textbf{Requisiti utente}: sono delle frasi in linguaggio naturale che descrivono le necessità che l'utente ha e che si aspetta che il sistema risolva. Sono abbastanza astratte perché definiscono a grandi linee ciò che l'utente vorrebbe vedere
-    \item \textbf{Requisiti di sistema}: hanno una struttura un po' più dettagliata, non sono in linguaggio libero. Di fatto non definiscono i bisogni dell'utente, ma il modo in cui gli addetti ai lavori comprendono i bisogni dell'utente. È necessario tradurre i requisiti utente in requisiti di sistema per poter essere usati in una progettazione e per validare se ciò che è stato chiesto è stato realizzato. Nei requisiti di sistema noi dobbiamo specificare bene quello che è stato messo nei requisiti utente. Solitamente il requisito da parte degli utenti è molto basico e generico, mentre i requisiti di sistema sono dettagliati e quanto più improntati all'implementazione
+    \item \textbf{Requisiti di sistema}: hanno una struttura un po' più dettagliata, non sono in linguaggio libero. Di fatto non definiscono i bisogni dell'utente, ma il modo in cui gli addetti ai lavori comprendono i bisogni dell'utente. È necessario tradurre i requisiti utente in requisiti di sistema per poter essere usati in una progettazione e per validare se ciò che è stato chiesto è stato realizzato. Nei requisiti di sistema si deve specificare bene quello che è stato messo nei requisiti utente. Solitamente il requisito da parte degli utenti è molto basico e generico, mentre i requisiti di sistema sono dettagliati e quanto più improntati all'implementazione
 \end{itemize}
 Gli \textbf{Stakeholders} sono coloro che hanno un qualche interesse per il sistema, che usano il sistema o le cui attività sono influenzate dal sistema. Lo sono gli utenti finali, i manager, i regolatori esterni.
 
@@ -15,7 +15,7 @@ Un'altra suddivisione macroscopica per i requisiti è quella tra requisiti funzi
 Sono quei requisiti che descrivono le funzionalità che il sistema deve avere.
 Quindi c'è un mapping 1:1 tra requisito funzionale e funzionalità.
 Ad esempio, un requisito funzionale riguarda come il sistema dovrebbe rispondere a un determinato input o come il sistema si dovrebbe comportare in determinate situazioni.\\
-Ci sono diversi livelli di astrazione sui requisiti non funzionali; possono essere molto generici o un po' più specifici.
+Ci sono diversi livelli di astrazione sui requisiti funzionali; possono essere molto generici o un po' più specifici.
 Essi possono anche essere ambigui e prestarsi a più interpretazioni.\\
 L'obiettivo dei requisiti funzionali è quello di essere completi, cioè tutte le funzionalità presenti all'interno del sistema devono essere catturate nei requisiti, inoltre devono essere consistenti.
 Di fatto, però, quello che succede è che gli stakeholder hanno necessità differenti e spesso sono già inconsistenti le richieste iniziali quindi i requisiti potrebbero essere imprecisi.
@@ -24,11 +24,11 @@ Alcune inconsistenze possono essere già identificate nella fase di raccolta dei
 \subsection{Requisiti non funzionali}
 Sono dei vincoli sul sistema, dei vincoli sui servizi offerti dal sistema nella sua interezza, quindi sono delle proprietà del sistema.
 Per esempio, potrebbero esserci dei vincoli sui tempi di risposta, sul processo che dobbiamo adottare per sviluppare il sistema (un particolare linguaggio di programmazione), standard che devono essere utilizzati perché sono prescritti dalla normativa o dal committente.\\
-Il punto fondamentale è che questi sono vincoli sul sistema nella sua interezza, quindi i vincoli non funzionali potrebbero a loro volta porre dei vincoli sull'architettura globale del sistema.\\
+Il punto fondamentale è che sono vincoli sul sistema nella sua interezza, quindi i vincoli non funzionali potrebbero a loro volta porre dei vincoli sull'architettura globale del sistema.\\
 Un requisito non funzionale potrebbe generare vari requisiti funzionali.
-Alcuni esempi di requisiti non funzionali.
+Alcuni esempi di requisiti non funzionali sono:
 \begin{itemize}[noitemsep]
-    \item \textbf{Requisiti di prodotto}: potrebbero esserci dei requisiti di usabilità anche per persone ipovedenti o daltoniche. Potremmo volere una maggiore affidabilità o dei tempi di risposta molto brevi
+    \item \textbf{Requisiti di prodotto}: potrebbero esserci dei requisiti di usabilità anche per persone ipovedenti o dicromatiche. Potremmo volere una maggiore affidabilità o dei tempi di risposta molto brevi
     \item \textbf{Requisiti di sicurezza}: chi può accedere al sistema, con quali permessi, quali sono i metodi di autenticazione
     \item \textbf{Requisiti di organizzazione}: a seconda del tipo di cliente o di sviluppatore potrebbero esserci dei vincoli sul processo produttivo. Ad esempio, vincolo sul linguaggio di programmazione o sugli ambienti sul quale il software deve girare
     \item \textbf{Requisiti esterni}: provengono dal mondo esterno come entità governative che regolano un particolare dominio. Oppure ci sono requisiti di natura etica o normativi (es. su software avionico o ferroviario)
@@ -41,7 +41,7 @@ Il processo di cui dobbiamo dotarci per raggiungere questi obiettivi.
 Tipicamente non è semplice comprendere i requisiti.
 Per minimizzare il numero di errori, serve una metodologia.
 Tanto più è seguito il metodo scelto, quanto più si ottiene un approccio ingegneristico.
-La raccolta dei requisiti si articola in tre macro-passi: elicitazione e analisi dei requisiti, specifica dei requisiti e validazione. Queste tre fasi non sono lineari, assomigliano più a passi di raffinamento successivo.
+La raccolta dei requisiti si articola in quattro macro-passi: elicitazione e analisi dei requisiti, specifica dei requisiti e validazione. Queste quattro fasi non sono lineari, assomigliano più a passi di raffinamento successivo.
 
 \subsubsection{Elicitazione dei requisiti}
 L'obiettivo è capire cosa gli utenti devono fare con il sistema, quali sono le funzionalità che il sistema dovrà fornire, come gli utenti interagiranno col sistema e come essi lavorano.\\
@@ -69,7 +69,7 @@ Questo metodo ha come obiettivo, oltre a quello di carpire i requisiti, anche di
 In questo metodo, l'ingegnere del software si immedesima nel ruolo di lavoratore all'interno dell'azienda e cerca di comprendere meglio il processo lavorativo dei futuri utenti.\\
 Questo sistema porta a evitare le domande dando spazio all'osservazione degli utenti durante l'operatività quotidiana.\\
 Uno studio di questo tipo è molto potente ma anche molto costoso ma possono essere condotti solo quando lo scopo è sostituire il software in uso con uno nuovo.\\
-Una volta che raccolte le necessità, per rappresentare questi requisiti si possono usare quelle storie e scenari.
+Una volta raccolte le necessità, per rappresentare questi requisiti si possono usare quelle storie e scenari.
 Sono un esempio di come il sistema dovrebbe funzionare ed è facile, a partire da queste, ottenere un feedback.
 La loro concretezza aiuta l'ingegnere del software a parlare con lo stakeholder.\\
 La storia è scritta in forma narrativa e racconta di come il sistema dovrebbe essere utilizzato.\\
@@ -102,7 +102,7 @@ Si possono anche utilizzare degli \textbf{sequence diagram} per specificare ogni
 L'obiettivo finale della raccolta dei requisiti è quello di scrivere il documento dei requisiti che espone in modo definito quelli che sono tutti i requisiti che devono essere implementati.\\
 La scrittura di questo documento è variabile e dipende dal sistema software che si deve implementare; se si utilizza un sistema guidato da piani il documento sarà molto dettagliato; in caso di un sistema a sviluppo incrementale il documento sarà meno strutturato e più agile con un minore livello di dettaglio.\\
 Alcuni organismi hanno cercato di definire degli standard per questa tipologia di documenti come \acrfull{IEEE}, ma tipicamente sono applicabili a processi di grandi dimensioni e guidati dal modello a piani.\\
-Questo documento può essere utilizzato sia dagli utenti finali, dai manager che lo utilizzano per una stima del costo che il progetto avrà, ma anche dagli ingegneri del sistema e dagli ingegneri dei testi.
+Questo documento può essere utilizzato sia dagli utenti finali, dai manager che lo utilizzano per una stima del costo che il progetto avrà, ma anche dagli ingegneri del sistema e dagli ingegneri dei test.
 Tornerà utile inoltre a coloro che dovranno fare la manutenzione del sistema.
 
 \subsubsection{Validazione dei requisiti}
@@ -120,12 +120,12 @@ Per controllare la validazione dei requisiti invece si possono seguire varie mod
 \begin{itemize}[noitemsep]
     \item \textbf{Controllo manuale}: un gruppo di persone esegue i controlli leggendo il documento e controllandone la consistenza
     \item \textbf{Tramite un prototipo}: per verificare se si è capito correttamente quello che è stato richiesto dal cliente
-    \item \textbf{Tramite scenari di test}: scrivere degli scenari di test ancor prima di creare il sistema. Questo impone di pensare a delle condizioni che vanno verificare e a controllare se tutte le casistiche sono state prese in considerazione. Se scrivere questi scenari di test risulta difficile, significa che il requisito non ha catturato bene ciò che il sistema dovrebbe supportare
+    \item \textbf{Tramite scenari di test}: scrivere degli scenari di test ancor prima di creare il sistema. Questo impone di pensare a delle condizioni che vanno a verificare e a controllare se tutte le casistiche sono state prese in considerazione. Se scrivere questi scenari di test risulta difficile, significa che il requisito non ha catturato bene ciò che il sistema dovrebbe supportare
 \end{itemize}
 
 \subsubsection{Cambiamento dei requisiti}
 A meno di aver scelto un processo che congela i requisiti per l'intera durata dello sviluppo, essi sono soggetti a cambiamento.
-Per questo motivo si deve trovare un metodo gestire richieste di cambiamento.\\
+Per questo motivo si deve trovare un metodo per gestire richieste di cambiamento.\\
 Per software di grandi dimensioni è da aspettarsi che i requisiti cambino costantemente.
 Tipicamente il motivo per il quale i requisiti cambiano sono la difficoltà nel definire bene e per sempre tutti i requisiti, perciò man mano che si procede e si conosce meglio il problema viene più facile dettagliare i requisiti in modo migliore.
 Altri motivi sono ad esempio modifiche all'hardware o richieste di integrazione con altri sistemi software del cliente oppure per via di nuove normative.\\

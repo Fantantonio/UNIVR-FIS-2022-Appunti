@@ -27,13 +27,13 @@ Per quanto riguarda il Risk management si possono individuare varie fasi.
 \subsection{Risk identification}
 È la parte più corposa dal punto di vista temporale, perché bisogna identificare quali sono i rischi che il progetto può incontrare.\\
 I rischi possono essere di stima sull'effort, sul tempo, sulle persone necessarie e possono compromettere l'intero progetto perché comportano errori di stima del costo.
-Vanno considerati anche i rischi organizzativi (potrebbero derivare dall'azienda, come problemi finanziari, problemi di budget), rischi legati al personale (potrebbe essere difficile acquisire le persone con la competenze necessarie a lavorare al progetto oppure alcuni sviluppatori potrebbero andare in malattia, rischi legati ai requisiti (mancanze nella raccolta dei requisiti che quindi vanno rivisti e conseguentemente va riscritto anche il codice corrispondente), rischi legati alla tecnologia (ad esempio l'utilizzo di un \acrshort{DB} che non è in grado di soddisfare tutte le richieste ed infine rischi legati agli strumenti che vengono utilizzati per facilitare il lavoro come generatori di codice o altro.
+Vanno considerati anche i rischi organizzativi (potrebbero derivare dall'azienda, come problemi finanziari, problemi di budget), rischi legati al personale (potrebbe essere difficile acquisire le persone con la competenze necessarie a lavorare al progetto oppure alcuni sviluppatori potrebbero andare in malattia), rischi legati ai requisiti (mancanze nella raccolta dei requisiti che quindi vanno rivisti e conseguentemente va riscritto anche il codice corrispondente), rischi legati alla tecnologia (ad esempio l'utilizzo di un \acrshort{DB} che non è in grado di soddisfare tutte le richieste) ed infine rischi legati agli strumenti che vengono utilizzati per facilitare il lavoro come generatori di codice o altro.
 
 \subsection{Risk analysis}
 Una volta identificati i rischi, essi vanno analizzati perché non sono tutti ugualmente importanti.\\
 Sono quindi da assegnare le priorità in base all'importanza del rischio.
 La criticità viene rappresentata in due dimensioni: la probabilità che il rischio si manifesti e la \textbf{seriousness} cioè l'impatto che avrebbe sul progetto.
-Tipicamente si utilizza la scala (molto bassa, bassa, alta, molto alta) per rappresentare le criticità ed essendo una scala qualitativa è abbastanza soggettive, pertanto spetta all'ingegnere essere il più oggettivo possibile.\\
+Tipicamente si utilizza la scala (molto bassa, bassa, alta, molto alta) per rappresentare le criticità ed essendo una scala qualitativa è abbastanza soggettiva, pertanto spetta all'ingegnere essere il più oggettivo possibile.\\
 Per ogni rischio quindi si deve associare un valore per la probabilità e la seriousness.
 
 \subsection{Risk planning}
@@ -70,12 +70,12 @@ Il momento del raggiungimento della milestone permette di avere una chiara idea 
 Lo stesso principio può essere applicato ai \textbf{deliverable} cioè tutti quei documenti o demo che possono essere consegnati al cliente.
 
 La pianificazione del progetto può essere rappresentata in una tabella, dove ogni task è una riga ed ogni colonna rappresenta sia l'effort che la durata in giorni che eventuali dipendenze.\\
-La rappresentazione migliore per la progettazione del progetto è il diagramma di Gantt, diagramma che rappresenta il flusso temporale del progetto.
+La rappresentazione migliore per la progettazione del progetto è il diagramma di \textbf{Gantt}, diagramma che rappresenta il flusso temporale del progetto.
 Sulle ascisse è rappresentato il tempo, dal giorno zero al termine mentre sulle ordinate sono rappresentate le task.
 Nel diagramma è presente una barra continua per ogni task, la barra inizia il giorno in cui la task dovrebbe cominciare e termina il giorno in cui dovrebbe finire perciò la lunghezza rappresenta la durata.\\
 Sono rappresentate anche le milestone con dei rombi e spesso si trovano all'inizio o alla fine delle task e si possono rappresentare esplicitamente o meno anche le dipendenze con delle frecce che iniziano dalle task che sono la dipendenza e terminano nella task che richiede la dipendenza.\\
 Questo diagramma permette di ragionare su come si possono ordinare le task per liberare risorse ed utilizzarle in modo migliore e più efficiente.\\
-Un altro diagramma meno utilizzato è lo staff-allocation che, una volta fatto il digramma di Gantt, permette di allocare le persone alle varie task.
+Un altro diagramma meno utilizzato è lo \textbf{staff-allocation} che, una volta fatto il digramma di Gantt, permette di allocare le persone alle varie task.
 Anche in questo caso l'asse delle ascisse rappresenta il flusso temporale e quello delle ordinate rappresenta le persone.\\
 La barra piena rappresenta una persona allocata full-time mentre la barra a metà rappresenta una persona allocata part-time.
 Questo diagramma permette di capire quanto stanno lavorando i dipendenti e quando entrano ed escono dal progetto.\\
@@ -90,7 +90,7 @@ Si inizia con l'identificazione di storie che rappresentano le feature e ad ognu
 Dopodiché bisogna pianificare le release scegliendo in che ordine vanno implementate le feature e il tempo totale di ogni ciclo.\\
 Si utilizza la velocity per capire quale delle storie inserire nella release ed all'inizio di ogni iterazione viene assegnata l'allocazione delle task in cui gli sviluppatori scelgono su quali task lavorare.\\
 La scelta è fatta su base volontaria ma tutte le task devono essere implementate per completare le storie.\\
-Circa a metà dell'iterazione e consigliabile fare una review per valutare se si è in orario con lo sviluppo o se si è in ritardo e nel caso riorganizzare le task rimanenti per poter consegnare un prodotto stabile seppur parziale al termine delle release.
+Circa a metà dell'iterazione è consigliabile fare una review per valutare se si è in orario con lo sviluppo o se si è in ritardo e nel caso riorganizzare le task rimanenti per poter consegnare un prodotto stabile seppur parziale al termine delle release.
 In questo caso il termine \virgolette{task} è diverso da quello usato precedentemente nel diagramma Gantt perché in questo caso le task sono precise e non generiche.\\
 La scadenza non può mai essere spostata quindi l'unica possibilità in caso di ritardi è la riduzione delle storie o task incluse nella release.\\
 Questo planning ha dei vantaggi tra cui l'incentivare la comunicazione e la conoscenza delle dipendenze, la possibilità di scelta delle proprie task per i programmatori che quindi sentiranno un senso di appartenenza alla task e saranno più motivati a portarle a termine.\\

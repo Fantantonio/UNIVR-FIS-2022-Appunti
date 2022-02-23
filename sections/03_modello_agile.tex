@@ -34,6 +34,7 @@ Ed alcuni principi fondamentali:
     \item \textbf{Meglio le persone che i processi}: le skills dei programmatori sono molto importanti. Essi vengono spesso lasciati liberi di adottare le proprie preferenze di scrittura del codice
     \item \textbf{Cambiamento dei requisiti}: è importante che l'architettura sia abbastanza agile da riuscire a cambiare i requisiti e l'implementazione in corso d'opera
     \item \textbf{Mantenere la semplicità}: perché le cose semplici sono quelle che solitamente creano meno problemi
+    \item \textbf{Utilizzo di strumenti automatizzati}
 \end{itemize}
 Le aziende che adottano le tecniche agili sviluppano software di piccole o medie dimensioni.
 Perché queste tecniche possano essere implementate, deve esserci la volontà del cliente di far parte del team di sviluppo.
@@ -52,14 +53,14 @@ A partire dalle user-story vanno sviluppate delle \textbf{task} che spezzano la 
 Questo lavoro è fatto dal team di sviluppo supportato dallo stakeholder che diventa parte del team di sviluppo stesso.
 Una volta definite le task si deve stimare l'effort necessario (es: ore o giorni) necessarie ad uno sviluppatore per risolvere una task.\\
 È importante avere anche una valutazione dell'importanza delle task, per concentrarsi prima su quelle che hanno un punteggio più alto.
-Fatto ciò è si può pensare allo sviluppo.
+Fatto ciò si può pensare allo sviluppo.
 
 \subsection{Test-driven}
 Una delle modalità di sviluppo utilizzate è detta test-driven, sviluppo guidato dai test.
 In passato i test venivano scritti dopo il software, in questo contesto tuttavia si inverte la relazione temporale ed i test sono scritti prima.
 È così possibile utilizzarli durante lo sviluppo del codice per trovare gli errori già durante lo sviluppo.
-Fintanto che le funzionalità correnti non sono tutte corrette lo sviluppo non può proseguire per evitare situazioni di contrasto successive generate degli errori e dalla loro risoluzione.
-Posticipare la correzione significa faticare di più per trovarne la causa e risolverlo.\\
+Fintanto che le funzionalità correnti non sono tutte corrette lo sviluppo non può proseguire per evitare situazioni di contrasto successive generate dagli errori e dalla loro risoluzione.
+Posticipare la correzione significa faticare di più per trovarne la causa e risolverla.\\
 Il test incrementale va di pari passo con lo sviluppo incrementale di uno scenario.
 Il punto critico è che per scrivere un test si deve avere ben chiaro il requisito poiché il test specifica quali input servono e quali output devono essere generati.
 Scrivere i test permette di verificare se lo sviluppatore ha compreso o meno il requisito e quindi è molto probabile che l'implementazione del codice sarà corretta con meno ambiguità e problemi di comprensione.\\
@@ -68,7 +69,7 @@ Adottare questa metodologia significa anche avere a disposizione degli strumenti
 In caso di cambiamenti in corsa alcune funzionalità possono essere sviluppate come implementazioni di altre funzionalità, quindi sono necessari dei componenti per agevolarne l'implementazione.\\
 Inevitabilmente, quando si sviluppa per incrementi successivi, la qualità del codice può andare scemando ed i cambiamenti che si dovranno affrontare in futuro saranno sempre più costosi e difficili da gestire.
 È importante dunque intraprendere delle attività di miglioramento del codice durante la produzione, cambiandone l'architettura e riportando la qualità ad un livello accettabile.
-Un'attività di questo tipo fatta a software completato può essere molto costa, mentre fatta volta per volta risulta essere più facile ed economica.\\
+Un'attività di questo tipo fatta a software completato può essere molto costosa, mentre fatta volta per volta risulta essere più facile ed economica.\\
 
 \subsection{Pair programming}
 Un altro concetto importante è il pair programming, cioè due sviluppatori che lavorano su un solo computer ad una stessa funzionalità.
@@ -85,7 +86,7 @@ Nel nostro caso ci si concentrerà sul contesto dello sviluppo del software.
 Ci sono alcune fasi che caratterizzano lo sviluppo tramite metodologia agile:
 \begin{itemize}[noitemsep]
     \item \textbf{Fase iniziale}: si esegue il setup del progetto in cui si definiscono gli obiettivi generali e si abbozza l'architettura del software anche se a grandi linee
-    \item \textbf{Fase centrale}: lo sviluppo avanza per cicli (sprint). Durante uno sprint si sviluppa un incremento che alla fine dello sprint andrà consegnato
+    \item \textbf{Fase di sviluppo (o centrale)}: lo sviluppo avanza per cicli (sprint). Si sviluppa un incremento durante uno sprint da consegnare alla fine dello stesso sprint
     \item \textbf{Fase finale}: alla fine degli sprint c'è la conclusione del progetto. Durante questa fase si scrive la documentazione e viene controllato l'intero progetto.
 \end{itemize}
 Il \textbf{product backlog} è la \virgolette{to-do list} che contiene tutte le funzionalità che dovranno essere implementate.
@@ -132,10 +133,10 @@ Per rispondere vanno fatte delle considerazioni:
 È quindi importante capire il tipo di sistema che si è chiamati a sviluppare; per esempio se la vita attesa del sistema è lunga, cioè se un sistema deve funzionare per molti anni, l'approccio agile non è il migliore.\\
 Bisogna anche capire quante inferenze esterne ci potrebbero essere sul prodotto software e conoscere il proprio team di dipendenti oltre al supporto tecnologico disponibile dato che il metodo agile funziona meglio laddove ci sono degli automatismi che risparmiano tempo ad azioni manuali.\\
 È importante definire il livello di skill dei componenti del team così che essi vengono lasciati liberi di prendere alcune decisioni.
-Alcune problematiche potrebbero emergere nel caso in cui il team sia distribuito geograficamente.\\
+Alcune problematiche potrebbero emergere nel caso in cui il team fosse distribuito geograficamente.\\
 In alcune organizzazioni si adottano dei processi di qualità che vincolano lo sviluppo perché si impone di motivare le decisioni prese e di scrivere i requisiti dettagliatamente prima di iniziare lo sviluppo.
 Questi vincoli vanno tenuti in considerazione per la scelta del metodo da adottare.\\
-Infine otrebbero esserci problemi nell'introdurre la metodologia agile in aziende abituate al modello plan-driven.\\
+Infine potrebbero esserci problemi nell'introdurre la metodologia agile in aziende abituate al modello plan-driven.\\
 La metodologia agile ha incontrato e incontra tutt'ora varie resistenze al momento della sua introduzione in azienda perché spesso i project manager non ne hanno una conoscenza approfondita e fanno fatica ad abbandonare qualcosa che conoscono bene per rischiare con un approccio innovativo.\\
 Inoltre spesso le grandi organizzazioni hanno delle procedure interne per il controllo e la verifica della qualità che di fatto sono in contrasto con le metodologie agili.\\
 In ultimo le metodologie agili prevedono la possibilità che i membri dei team, a seconda delle loro capacità, possano prendere delle decisioni.
